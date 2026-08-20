@@ -14,8 +14,8 @@
 <meta property="og:title" content="Juliana Neri — Consultora Imobiliária de Alto Padrão | Goiânia">
 <meta property="og:description" content="Exclusividade não se explica. Se reconhece. Parceira oficial das principais incorporadoras de alto padrão de Goiânia.">
 <meta property="og:url" content="https://juliana-neri.vercel.app/">
-<!-- SUBSTITUIR: imagem de compartilhamento social 1200x630px (retrato editorial da Juliana ou lançamento em destaque) -->
-<meta property="og:image" content="/og-juliana-neri.jpg">
+<meta property="og:image" content="https://juliana-neri.vercel.app/img/og-juliana-neri.jpg">
+<meta property="og:image:alt" content="Juliana Neri em uma varanda com vista para o Lago das Rosas, em Goiânia">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- SUBSTITUIR: favicon definitivo (monograma JN dourado sobre charcoal) -->
@@ -221,26 +221,30 @@ p{margin:0}
 .hero__meta dt{font-size:var(--step--1);color:var(--on-dark-faint);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
 .hero__meta dd{margin:0;font-family:var(--font-display);font-size:1.35rem;color:var(--on-dark)}
 
-/* retrato editorial — placeholder CSS */
-.portrait{
-  position:relative;aspect-ratio:1400/900;width:100%;
-  border:1px solid rgba(201,162,75,.28);border-radius:var(--radius-lg);
-  background:linear-gradient(135deg,#1A1614 0%,#7A1F27 140%);
-  display:grid;place-items:center;overflow:hidden;
+/* ── FIGURAS DE IMAGEM ────────────────────────────────
+   .figure recorta, .figure__inner faz o parallax (JS),
+   o <img> faz o zoom-out de entrada no scroll reveal. */
+.figure{
+  position:relative;overflow:hidden;border-radius:var(--radius-lg);
+  background:var(--cream-deep);border:1px solid var(--line-gold);
 }
-.portrait--tall{aspect-ratio:500/600}
-.portrait::after{
-  content:"";position:absolute;inset:0;opacity:.5;
-  background:repeating-linear-gradient(115deg,rgba(244,237,228,.045) 0 1px,transparent 1px 9px);
+.figure__inner{position:absolute;inset:0;will-change:transform}
+.figure.parallax .figure__inner{inset:-7% 0}
+.figure img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transform:scale(1.09);opacity:0;
+  transition:transform 1.5s var(--ease),opacity 1.1s var(--ease);
 }
-.portrait__mark{
-  position:relative;z-index:1;text-align:center;
-  font-family:var(--font-display);color:rgba(244,237,228,.34);
-}
-.portrait__mark strong{display:block;font-size:clamp(2.5rem,7vw,4rem);font-weight:400;letter-spacing:.1em}
-.portrait__mark span{
-  display:block;font-family:var(--font-body);font-size:.6875rem;
-  letter-spacing:.2em;text-transform:uppercase;margin-top:.6rem;
+.figure.is-in img{transform:scale(1);opacity:1}
+.figure--hero{aspect-ratio:4/5;border-color:rgba(201,162,75,.3)}
+.figure--feature{aspect-ratio:4/5}
+.figure--card{aspect-ratio:3/4}
+.figure--tall{aspect-ratio:4/5}
+.figure--seal{aspect-ratio:4/5}
+.figure figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:2.4rem 1.1rem .85rem;
+  font-size:.625rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,237,228,.82);
+  background:linear-gradient(to top,rgba(26,22,20,.72),transparent);
 }
 .hero__portrait{position:relative}
 .hero__seal{
@@ -268,11 +272,16 @@ p{margin:0}
   content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
   width:min(var(--maxw),100% - 2*var(--gutter));height:1px;background:var(--line-gold);
 }
-.authority__grid{display:grid;grid-template-columns:auto 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.authority__grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,4rem);align-items:start}
 .authority__statement{font-size:var(--step-2);font-family:var(--font-display);line-height:1.24;max-width:22ch}
 .authority__body{margin-top:1.5rem;max-width:56ch}
 .authority__body strong{font-weight:600;color:var(--ink)}
-.seal{width:clamp(104px,13vw,148px);height:auto;flex:none}
+.authority__media{position:relative}
+.seal{
+  position:absolute;right:-14px;bottom:-14px;width:clamp(76px,9vw,104px);height:auto;
+  background:var(--cream);border-radius:50%;padding:6px;
+  box-shadow:0 10px 26px rgba(26,22,20,.16);
+}
 .stats{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
   gap:1px;background:var(--line);border:1px solid var(--line);
@@ -335,7 +344,7 @@ p{margin:0}
   transition:transform .45s var(--ease),box-shadow .45s var(--ease);
 }
 .card:hover{transform:translateY(-4px);box-shadow:0 20px 46px rgba(26,22,20,.1)}
-.card .shot{border:0;border-bottom:1px solid var(--line-gold);border-radius:0}
+.card .figure{border:0;border-bottom:1px solid var(--line-gold);border-radius:0}
 .card__body{padding:1.6rem;display:flex;flex-direction:column;flex:1;gap:.85rem}
 .card__body h3{font-size:var(--step-1)}
 .card__body p{font-size:var(--step--1);color:var(--ink-soft)}
@@ -348,7 +357,33 @@ p{margin:0}
 .card__link:hover span{transform:translateX(5px)}
 @media(max-width:860px){.feature{grid-template-columns:1fr}}
 
-/* ═══════════ 5. POR QUE UMA CORRETORA PARCEIRA ═══════════ */
+/* ═══════════ 5. PORTFÓLIO DE EMPREENDIMENTOS ═══════════ */
+.portfolio{background:var(--cream)}
+.pf-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:clamp(1rem,2.5vw,1.5rem);
+}
+.pf{display:flex;flex-direction:column;gap:.9rem}
+.pf .figure{aspect-ratio:4/3}
+.pf h3{font-size:var(--step-1)}
+.pf p{font-size:var(--step--1);color:var(--ink-soft)}
+.pf__place{
+  font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--wine);
+}
+.pf-more{
+  margin-top:clamp(2.5rem,5vw,3.5rem);padding-top:2rem;border-top:1px solid var(--line);
+}
+.pf-more h3{font-size:var(--step-1);margin-bottom:.6rem}
+.pf-more > p{font-size:var(--step--1);color:var(--ink-soft);max-width:56ch}
+.pf-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem;padding:0;list-style:none}
+.pf-tags li{
+  font-size:var(--step--1);padding:.45rem .85rem;
+  border:1px solid var(--line-gold);border-radius:var(--radius);
+  color:var(--ink-soft);background:var(--cream-deep);
+}
+
+/* ═══════════ 6. POR QUE UMA CORRETORA PARCEIRA ═══════════ */
 .why{background:var(--charcoal);color:var(--on-dark)}
 .why h2{font-size:var(--step-3);color:var(--on-dark);max-width:18ch}
 .why__lead{margin-top:1.4rem;max-width:52ch}
@@ -479,6 +514,13 @@ p{margin:0}
   .wa{padding:.9rem;border-radius:50%}
 }
 
+/* ═══════════ BARRA DE PROGRESSO DE SCROLL ═══════════ */
+.progress{
+  position:fixed;top:0;left:0;right:0;height:2px;z-index:130;
+  background:var(--gold);transform:scaleX(0);transform-origin:0 50%;
+  transition:transform .12s linear;pointer-events:none;
+}
+
 /* ═══════════ SCROLL REVEAL ═══════════ */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .reveal.is-in{opacity:1;transform:none}
@@ -495,6 +537,9 @@ p{margin:0}
   }
   .reveal{opacity:1;transform:none}
   .wa::before{display:none}
+  .figure img{opacity:1;transform:none}
+  .figure.parallax .figure__inner{inset:0;transform:none !important}
+  .progress{display:none}
 }
 @media (prefers-reduced-transparency: reduce){
   .nav.is-stuck{background:var(--charcoal);backdrop-filter:none}
@@ -522,6 +567,7 @@ p{margin:0}
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
 <!-- ═══════════════════════════════════════════════════════
      1. NAV — nome + badge de credencial + CTA
@@ -540,6 +586,7 @@ p{margin:0}
     <nav class="nav__links" id="navLinks" aria-label="Navegação principal">
       <a class="nav__link" href="#autoridade">Credencial</a>
       <a class="nav__link" href="#lancamentos">Lançamentos</a>
+      <a class="nav__link" href="#portfolio">Portfólio</a>
       <a class="nav__link" href="#parceria">Por que comigo</a>
       <a class="nav__link" href="#cadastro">Cadastro antecipado</a>
       <a class="nav__link" href="#sobre">Sobre</a>
@@ -579,14 +626,11 @@ p{margin:0}
     </div>
 
     <div class="hero__portrait">
-      <!-- SUBSTITUIR: foto editorial da Juliana ou vista de um lançamento — 1400x900px.
-           Trocar a div .portrait por: <img src="hero-juliana.jpg" alt="Juliana Neri, consultora imobiliária, em Goiânia" width="1400" height="900"> -->
-      <div class="portrait" role="img" aria-label="Espaço reservado para o retrato editorial de Juliana Neri">
-        <span class="portrait__mark">
-          <strong>JN</strong>
-          <span>Retrato editorial · 1400×900</span>
-        </span>
-      </div>
+      <!-- Foto da própria Juliana (post do Lago das Rosas no Instagram dela).
+           SUBSTITUIR quando houver ensaio editorial produzido — 1100x1375px -->
+      <figure class="figure figure--hero parallax reveal" style="margin:0">
+          <div class="figure__inner"><img src="img/hero-juliana-lago.jpg" alt="Juliana Neri em uma varanda de andar alto, com o Lago das Rosas e o skyline de Goiânia ao entardecer" width="1100" height="1375" fetchpriority="high"></div>
+        </figure>
 
       <!-- badge de credencial (vermelho, nunca botão) -->
       <div class="hero__seal">
@@ -613,13 +657,17 @@ p{margin:0}
     <p class="eyebrow reveal" style="margin-bottom:clamp(2rem,4vw,3rem)">A credencial</p>
 
     <div class="authority__grid">
-      <!-- Selo/medalha em SVG — sem foto.
-           SUBSTITUIR (opcional): foto real da medalha/prêmio Opus, se disponível — 400x400px -->
-      <div class="reveal">
-        <svg class="seal" viewBox="0 0 120 120" role="img" aria-label="Selo de premiação Corretora Original Opus">
-          <circle cx="60" cy="60" r="56" fill="none" stroke="#C9A24B" stroke-width="1"/>
-          <circle cx="60" cy="60" r="47" fill="none" stroke="#C9A24B" stroke-width="2.5"/>
-          <circle cx="60" cy="60" r="40" fill="none" stroke="rgba(122,31,39,.35)" stroke-width="1"/>
+      <!-- Foto real da premiação Opus (Instagram dela, 19/04/2024).
+           SUBSTITUIR: versão em alta da assessoria, se houver — 1000x1249px -->
+      <div class="authority__media reveal">
+        <figure class="figure figure--seal reveal" style="margin:0">
+          <div class="figure__inner"><img src="img/premio-opus.jpg" alt="Juliana Neri de vestido vermelho segurando a medalha Corretora Original Opus, diante do medalhão dourado da premiação" width="1000" height="1249" loading="lazy" decoding="async"></div>
+          <figcaption>Premiação Opus · Goiânia</figcaption>
+        </figure>
+        <svg class="seal" viewBox="0 0 120 120" role="img" aria-label="Selo Corretora Original Opus 2024">
+          <circle cx="60" cy="60" r="56" fill="var(--cream)"/>
+          <circle cx="60" cy="60" r="52" fill="none" stroke="#C9A24B" stroke-width="1"/>
+          <circle cx="60" cy="60" r="45" fill="none" stroke="#C9A24B" stroke-width="2.5"/>
           <path d="M60 34l5.6 11.4 12.6 1.8-9.1 8.9 2.2 12.5L60 62.7l-11.3 5.9 2.2-12.5-9.1-8.9 12.6-1.8z" fill="#C9A24B"/>
           <text x="60" y="82" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="9" fill="#7A1F27" letter-spacing="1.4">OPUS</text>
           <text x="60" y="94" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="8" fill="rgba(26,22,20,.55)" letter-spacing="1.2">2024</text>
@@ -679,10 +727,13 @@ p{margin:0}
     <!-- ── DESTAQUE PRINCIPAL: Lago das Rosas ── -->
     <article class="feature reveal">
       <div>
-        <!-- SUBSTITUIR: render ou foto real do apartamento / vista para o Lago das Rosas — 800x600px -->
-        <div class="shot" role="img" aria-label="Espaço reservado para a foto do apartamento no Lago das Rosas">
+        <!-- Vista real para o Lago das Rosas, do post da própria Juliana.
+             SUBSTITUIR: render oficial do empreendimento — 900x1200px -->
+        <div style="position:relative">
           <span class="tag shot__tag">Pronto para morar</span>
-          <span class="shot__mark"><strong>Lago das Rosas</strong>Render / foto real · 800×600</span>
+          <figure class="figure figure--feature parallax reveal" style="margin:0">
+          <div class="figure__inner"><img src="img/lancamento-lago-das-rosas.jpg" alt="Vista do alto para o Lago das Rosas, o parque e o skyline de Goiânia ao entardecer" width="900" height="1200" loading="lazy" decoding="async"></div>
+        </figure>
         </div>
       </div>
 
@@ -710,10 +761,13 @@ p{margin:0}
     <!-- ── Os outros dois lançamentos ── -->
     <div class="cards">
       <article class="card reveal" data-d="1">
-        <!-- SUBSTITUIR: render oficial do lançamento Flamboyant Urbanismo — 800x600px -->
-        <div class="shot" role="img" aria-label="Espaço reservado para o render do lançamento Flamboyant Urbanismo">
+        <!-- Foto da Juliana no empreendimento da Flamboyant Urbanismo (Instagram dela).
+             SUBSTITUIR: render oficial quando a incorporadora liberar — 900x1200px -->
+        <div style="position:relative">
           <span class="tag shot__tag">Pré-lançamento</span>
-          <span class="shot__mark"><strong>Flamboyant Urbanismo</strong>Render oficial · 800×600</span>
+          <figure class="figure figure--card reveal" data-d="1" style="margin:0">
+          <div class="figure__inner"><img src="img/lancamento-flamboyant.jpg" alt="Juliana Neri no empreendimento da Flamboyant Urbanismo em Goiânia" width="900" height="1200" loading="lazy" decoding="async"></div>
+        </figure>
         </div>
         <div class="card__body">
           <span class="tag tag--quiet">Goiânia</span>
@@ -729,10 +783,13 @@ p{margin:0}
       </article>
 
       <article class="card reveal" data-d="2">
-        <!-- SUBSTITUIR: foto/render dos edifícios da Rua 148, Setor Marista — 800x600px -->
-        <div class="shot" role="img" aria-label="Espaço reservado para a foto dos edifícios da Rua 148, Setor Marista">
+        <!-- Rua 148 real, do post da própria Juliana sobre o endereço.
+             SUBSTITUIR: renders oficiais dos edifícios — 900x1200px -->
+        <div style="position:relative">
           <span class="tag shot__tag">Alto padrão</span>
-          <span class="shot__mark"><strong>Rua 148 · Marista</strong>Render oficial · 800×600</span>
+          <figure class="figure figure--card reveal" data-d="2" style="margin:0">
+          <div class="figure__inner"><img src="img/lancamento-rua-148.jpg" alt="Juliana Neri na Rua 148, no Setor Marista, com os edifícios de alto padrão ao fundo" width="900" height="1200" loading="lazy" decoding="async"></div>
+        </figure>
         </div>
         <div class="card__body">
           <span class="tag tag--quiet">Goiânia · Setor Marista</span>
@@ -747,7 +804,93 @@ p{margin:0}
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
-     5. POR QUE NEGOCIAR COM UMA CORRETORA PARCEIRA
+     5. PORTFÓLIO — empreendimentos que ela já apresentou.
+     Nomes e imagens vêm dos destaques e posts do Instagram
+     dela (@juliananerimoveis).
+     ⚠ CONFIRMAR com a Juliana: quais destes ainda estão em
+     comercialização e quais já foram entregues/vendidos,
+     para ajustar os textos antes de publicar.
+     ═══════════════════════════════════════════════════════ -->
+<section class="section portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Empreendimentos que já apresentei</h2>
+      <p>Quinze anos de Goiânia cabem melhor numa lista de endereços do que numa frase sobre mim.</p>
+    </div>
+
+    <div class="pf-grid">
+      <article class="pf reveal">
+        <figure class="figure" style="margin:0">
+          <div class="figure__inner"><img src="img/portfolio-vitreo.jpg" alt="Juliana Neri em frente ao edifício Vítreo, na Rua 148, Setor Marista" width="820" height="615" loading="lazy" decoding="async"></div>
+        </figure>
+        <div>
+          <span class="pf__place">Rua 148 · Marista</span>
+          <h3>Vítreo</h3>
+          <p>Um único apartamento por andar — o tipo de projeto que não se repete na quadra.</p>
+        </div>
+      </article>
+
+      <article class="pf reveal" data-d="1">
+        <figure class="figure" style="margin:0">
+          <div class="figure__inner"><img src="img/portfolio-auro.jpg" alt="Adega climatizada em área comum do edifício Auro, na Rua 148" width="820" height="615" loading="lazy" decoding="async"></div>
+        </figure>
+        <div>
+          <span class="pf__place">Rua 148 · Marista</span>
+          <h3>Auro</h3>
+          <p>Áreas comuns com design assinado, da adega climatizada ao living social.</p>
+        </div>
+      </article>
+
+      <article class="pf reveal" data-d="2">
+        <figure class="figure" style="margin:0">
+          <div class="figure__inner"><img src="img/portfolio-ryad.jpg" alt="Hall social em mármore com arco e espelho de moldura dourada, no edifício Ryad" width="820" height="615" loading="lazy" decoding="async"></div>
+        </figure>
+        <div>
+          <span class="pf__place">Rua 148 · Marista</span>
+          <h3>Ryad</h3>
+          <p>Hall social em mármore. A primeira impressão de quem chega — e de quem visita.</p>
+        </div>
+      </article>
+
+      <article class="pf reveal" data-d="3">
+        <figure class="figure" style="margin:0">
+          <div class="figure__inner"><img src="img/portfolio-alphaville.jpg" alt="Vista aérea de residência em condomínio fechado no Alphaville Cruzeiro do Sul, Goiânia" width="820" height="615" loading="lazy" decoding="async"></div>
+        </figure>
+        <div>
+          <span class="pf__place">Alphaville Cruzeiro do Sul</span>
+          <h3>Casa em condomínio</h3>
+          <p>Residência com terreno amplo em um dos condomínios mais fechados de Goiânia.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="pf-more reveal">
+      <h3>E também</h3>
+      <p>Outros empreendimentos e projetos que acompanhei de perto, com as incorporadoras parceiras.</p>
+      <!-- ⚠ CONFIRMAR: lista extraída dos destaques do Instagram dela.
+           Validar grafia e remover o que não fizer mais sentido expor. -->
+      <ul class="pf-tags">
+        <li>Casa Opus Maris</li>
+        <li>Opus Acqua</li>
+        <li>Opus Tellure</li>
+        <li>Opus Ybaté</li>
+        <li>Deck 23 by Opus</li>
+        <li>Reserva Ybiti</li>
+        <li>Terra da Grama</li>
+        <li>Duplex Vertti</li>
+        <li>Gyro Opus RP</li>
+        <li>Jardins Mônaco</li>
+        <li>Epic</li>
+        <li>Kingdom</li>
+        <li>Zeus</li>
+        <li>EcoCasa Jardim América</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     6. POR QUE NEGOCIAR COM UMA CORRETORA PARCEIRA
      O diferencial estrutural do modelo dela.
      ═══════════════════════════════════════════════════════ -->
 <section class="section why" id="parceria">
@@ -785,7 +928,7 @@ p{margin:0}
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
-     6. CADASTRO ANTECIPADO — mecânica própria dela.
+     7. CADASTRO ANTECIPADO — mecânica própria dela.
      ═══════════════════════════════════════════════════════ -->
 <section class="section signup" id="cadastro">
   <div class="wrap signup__grid">
@@ -844,7 +987,7 @@ p{margin:0}
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
-     7. DEPOIMENTOS
+     8. DEPOIMENTOS
      SUBSTITUIR: os três textos abaixo são de exemplo e devem
      ser trocados por depoimentos reais de clientes da Juliana,
      com autorização de uso do nome.
@@ -888,19 +1031,16 @@ p{margin:0}
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
-     8. SOBRE — autoridade pessoal, CRECI e contato direto
+     9. SOBRE — autoridade pessoal, CRECI e contato direto
      ═══════════════════════════════════════════════════════ -->
 <section class="section about" id="sobre">
   <div class="wrap about__grid">
     <div class="about__portrait reveal">
-      <!-- SUBSTITUIR: foto profissional da Juliana — 500x600px.
-           Trocar a div .portrait por: <img src="juliana-retrato.jpg" alt="Juliana Neri" width="500" height="600"> -->
-      <div class="portrait portrait--tall" role="img" aria-label="Espaço reservado para a foto profissional de Juliana Neri">
-        <span class="portrait__mark">
-          <strong>JN</strong>
-          <span>Retrato · 500×600</span>
-        </span>
-      </div>
+      <!-- Retrato profissional da própria Juliana (canal do YouTube dela).
+           SUBSTITUIR: ensaio profissional em alta — 800x1000px -->
+      <figure class="figure figure--tall parallax reveal" style="margin:0">
+          <div class="figure__inner"><img src="img/juliana-retrato.jpg" alt="Retrato profissional de Juliana Neri" width="800" height="1000" loading="lazy" decoding="async"></div>
+        </figure>
     </div>
 
     <div>
@@ -947,7 +1087,7 @@ p{margin:0}
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
-     9. CTA FINAL
+     10. CTA FINAL
      ═══════════════════════════════════════════════════════ -->
 <section class="section final">
   <div class="wrap narrow">
@@ -967,7 +1107,7 @@ p{margin:0}
 </main>
 
 <!-- ═══════════════════════════════════════════════════════
-     10. FOOTER
+     11. FOOTER
      ═══════════════════════════════════════════════════════ -->
 <footer class="footer">
   <div class="wrap">
@@ -1014,13 +1154,41 @@ p{margin:0}
   var WHATSAPP = "5562999587833";
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ── NAV: estado fixo ao rolar ─────────────────────── */
-  var nav = document.getElementById("nav");
+  /* ── SCROLL: nav fixa, barra de progresso e parallax ──
+     Tudo num único listener passivo, com o trabalho de layout
+     agrupado dentro de um requestAnimationFrame para não
+     provocar leitura/escrita alternada (layout thrashing). */
+  var nav      = document.getElementById("nav");
+  var progress = document.getElementById("progress");
+  var layers   = [].slice.call(document.querySelectorAll(".figure.parallax .figure__inner"));
+  var ticking  = false;
+
+  function frame(){
+    ticking = false;
+    var y = window.scrollY || window.pageYOffset;
+    var vh = window.innerHeight;
+
+    nav.classList.toggle("is-stuck", y > 24);
+
+    var max = document.documentElement.scrollHeight - vh;
+    progress.style.transform = "scaleX(" + (max > 0 ? Math.min(y / max, 1) : 0) + ")";
+
+    if (!reduceMotion) {
+      for (var i = 0; i < layers.length; i++) {
+        var el = layers[i], box = el.parentNode.getBoundingClientRect();
+        if (box.bottom < -80 || box.top > vh + 80) continue;      // fora da tela: não mexe
+        var mid = (box.top + box.height / 2 - vh / 2) / vh;        // -1 .. 1
+        el.style.transform = "translate3d(0," + (mid * 26).toFixed(2) + "px,0)";
+      }
+    }
+  }
+
   var onScroll = function(){
-    nav.classList.toggle("is-stuck", window.scrollY > 24);
+    if (!ticking) { ticking = true; requestAnimationFrame(frame); }
   };
-  onScroll();
+  frame();
   window.addEventListener("scroll", onScroll, {passive:true});
+  window.addEventListener("resize", onScroll, {passive:true});
 
   /* ── NAV: menu mobile ──────────────────────────────── */
   var toggle = document.getElementById("navToggle");
