@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juliana Neri — Consultora Imobiliária de Alto Padrão | Goiânia</title>
+<meta name="description" content="Consultora imobiliária há 15 anos em Goiânia, parceira oficial das principais incorporadoras de alto padrão. Corretora Original Opus — uma de apenas 13 no Brasil premiadas em 2024.">
+<meta name="theme-color" content="#1A1614">
+<link rel="canonical" href="https://juliana-neri.vercel.app/">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Juliana Neri — Consultora Imobiliária de Alto Padrão | Goiânia">
+<meta property="og:description" content="Exclusividade não se explica. Se reconhece. Parceira oficial das principais incorporadoras de alto padrão de Goiânia.">
+<meta property="og:url" content="https://juliana-neri.vercel.app/">
+<!-- SUBSTITUIR: imagem de compartilhamento social 1200x630px (retrato editorial da Juliana ou lançamento em destaque) -->
+<meta property="og:image" content="/og-juliana-neri.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- SUBSTITUIR: favicon definitivo (monograma JN dourado sobre charcoal) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231A1614'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' fill='%23C9A24B' text-anchor='middle'%3EJN%3C/text%3E%3C/svg%3E">
+
+<!-- Fraunces (headline serifada editorial) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
+<!-- General Sans (corpo) — distribuída pela Fontshare, não pelo Google Fonts -->
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════════
+   TOKENS
+   Dourado #C9A24B é EXCLUSIVO de botões e sempre recebe texto
+   escuro (#1A1614 → 7.49:1). Vermelho #7A1F27 é EXCLUSIVO de
+   badges/tags de credencial, sempre com texto branco (10.23:1),
+   nunca em botão de ação.
+   ═══════════════════════════════════════════════════════════ */
+:root{
+  --charcoal:#1A1614;
+  --charcoal-soft:#2A2320;
+  --wine:#7A1F27;
+  --wine-deep:#5E1720;
+  --gold:#C9A24B;
+  --gold-warm:#DDBA6B;
+  --cream:#FAF6F0;
+  --cream-deep:#EFE7DB;
+  --line:rgba(26,22,20,.12);
+  --line-gold:rgba(201,162,75,.25);
+  --ink:#1A1614;
+  --ink-soft:rgba(26,22,20,.68);
+  --ink-faint:rgba(26,22,20,.5);
+  --on-dark:#F4EDE4;
+  --on-dark-soft:rgba(244,237,228,.7);
+  --on-dark-faint:rgba(244,237,228,.45);
+
+  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-body:"General Sans","Satoshi",-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif;
+
+  --step--1:clamp(.8rem,.77rem + .15vw,.875rem);
+  --step-0:clamp(1rem,.96rem + .2vw,1.0625rem);
+  --step-1:clamp(1.125rem,1.05rem + .35vw,1.3125rem);
+  --step-2:clamp(1.5rem,1.3rem + .9vw,2.125rem);
+  --step-3:clamp(2rem,1.6rem + 1.9vw,3.25rem);
+  --step-4:clamp(2.6rem,1.9rem + 3.3vw,5rem);
+
+  --gutter:clamp(1.25rem,4vw,3rem);
+  --maxw:1200px;
+  --maxw-narrow:760px;
+  --section-y:clamp(4.5rem,9vw,8.5rem);
+  --radius:2px;
+  --radius-lg:4px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html:focus-within{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--cream); /* nunca branco puro */
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:var(--step-0);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3,h4{margin:0;font-family:var(--font-display);font-weight:400;line-height:1.06;letter-spacing:-.02em}
+p{margin:0}
+::selection{background:var(--gold);color:var(--charcoal)}
+
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:var(--radius)}
+
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.narrow{max-width:var(--maxw-narrow)}
+.section{padding-block:var(--section-y)}
+
+.skip{position:absolute;left:-999px;top:0;z-index:200;background:var(--gold);color:var(--charcoal);padding:.75rem 1.25rem;font-weight:600}
+.skip:focus{left:1rem;top:1rem}
+
+/* ── tipografia utilitária ─────────────────────────── */
+.eyebrow{
+  font-size:var(--step--1);font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-faint);
+  display:flex;align-items:center;gap:.7rem;
+}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold);flex:none}
+.eyebrow--dark{color:var(--on-dark-faint)}
+.display{font-size:var(--step-3)}
+.display-xl{font-size:var(--step-4)}
+.serif-em{font-style:italic;color:var(--gold)}
+.lead{font-size:var(--step-1);line-height:1.55;color:var(--ink-soft)}
+.lead--dark{color:var(--on-dark-soft)}
+
+/* ── badge de credencial (VERMELHO — nunca botão) ──── */
+.badge{
+  display:inline-flex;align-items:center;gap:.45rem;
+  background:var(--wine);color:#fff;
+  font-size:.6875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  padding:.4rem .7rem;border-radius:var(--radius);white-space:nowrap;
+}
+.badge svg{flex:none}
+.badge--outline{background:transparent;color:var(--wine);border:1px solid rgba(122,31,39,.35)}
+.tag{
+  display:inline-block;background:var(--wine);color:#fff;
+  font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  padding:.35rem .6rem;border-radius:var(--radius);
+}
+.tag--quiet{background:rgba(26,22,20,.06);color:var(--ink-soft)}
+
+/* ── botões (DOURADO — sempre texto charcoal) ──────── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  padding:.95rem 1.6rem;border:1px solid transparent;border-radius:var(--radius);
+  font-weight:600;font-size:var(--step--1);letter-spacing:.06em;text-transform:uppercase;
+  cursor:pointer;transition:transform .35s var(--ease),background-color .35s var(--ease),border-color .35s var(--ease),color .35s var(--ease);
+}
+.btn--gold{background:var(--gold);color:var(--charcoal)}     /* 7.49:1 */
+.btn--gold:hover{background:var(--gold-warm);transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:var(--on-dark);border-color:rgba(244,237,228,.32)}
+.btn--ghost:hover{border-color:var(--on-dark);transform:translateY(-2px)}
+.btn--ghost-dark{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn--ghost-dark:hover{border-color:var(--charcoal);transform:translateY(-2px)}
+.btn--block{width:100%}
+
+/* ═══════════ 1. NAV ═══════════ */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:100;
+  padding-block:1.1rem;
+  transition:background-color .4s var(--ease),padding .4s var(--ease),box-shadow .4s var(--ease);
+}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav.is-stuck{background:rgba(26,22,20,.92);backdrop-filter:blur(14px);padding-block:.7rem;box-shadow:0 1px 0 rgba(201,162,75,.16)}
+.brand{display:flex;align-items:center;gap:.85rem;min-width:0}
+.brand__name{font-family:var(--font-display);font-size:1.28rem;color:var(--on-dark);letter-spacing:-.01em;white-space:nowrap}
+.brand__badge{font-size:.5625rem;padding:.3rem .55rem;letter-spacing:.1em}
+.nav__links{display:flex;align-items:center;gap:2rem}
+.nav__link{
+  font-size:var(--step--1);color:var(--on-dark-soft);letter-spacing:.04em;
+  position:relative;padding-block:.25rem;transition:color .3s var(--ease);
+}
+.nav__link::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .35s var(--ease)}
+.nav__link:hover{color:var(--on-dark)}
+.nav__link:hover::after{width:100%}
+.nav__cta{padding:.7rem 1.15rem}
+.nav__toggle{display:none;background:none;border:0;padding:.5rem;cursor:pointer}
+.nav__toggle span{display:block;width:22px;height:1.5px;background:var(--on-dark);margin:5px 0;transition:transform .35s var(--ease),opacity .25s var(--ease)}
+.nav__toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav__toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav__toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+@media(max-width:960px){
+  .nav__toggle{display:block}
+  .nav__links{
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:var(--charcoal);border-top:1px solid rgba(201,162,75,.18);
+    padding:.5rem var(--gutter) 1.5rem;
+    clip-path:inset(0 0 100% 0);pointer-events:none;
+    transition:clip-path .45s var(--ease);
+  }
+  .nav__links.is-open{clip-path:inset(0 0 0 0);pointer-events:auto}
+  .nav__link{padding-block:.95rem;border-bottom:1px solid rgba(244,237,228,.08);font-size:1rem}
+  .nav__cta{margin-top:1.1rem;justify-content:center}
+  .brand__badge{display:none}
+}
+
+/* ═══════════ 2. HERO ═══════════ */
+/* Sem barra de busca — a entrada aqui é a autoridade da Juliana,
+   não um catálogo de imóveis. */
+.hero{
+  position:relative;background:var(--charcoal);color:var(--on-dark);
+  padding-top:clamp(8rem,16vh,11rem);padding-bottom:clamp(3.5rem,7vw,5.5rem);
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(120% 90% at 88% 8%,rgba(122,31,39,.55) 0%,transparent 62%);
+  pointer-events:none;
+}
+.hero__grid{
+  position:relative;display:grid;gap:clamp(2.5rem,5vw,4.5rem);
+  grid-template-columns:1.08fr .92fr;align-items:center;
+}
+.hero__eyebrow{margin-bottom:1.6rem}
+.hero h1{font-size:var(--step-4);color:var(--on-dark);margin-bottom:1.5rem}
+.hero h1 em{font-style:italic;color:var(--gold);display:block}
+.hero__sub{max-width:44ch;margin-bottom:2.4rem}
+.hero__actions{display:flex;flex-wrap:wrap;gap:.85rem}
+.hero__meta{
+  display:flex;flex-wrap:wrap;gap:clamp(1.5rem,4vw,3rem);
+  margin-top:clamp(2.5rem,5vw,3.5rem);padding-top:1.8rem;
+  border-top:1px solid rgba(244,237,228,.14);
+}
+.hero__meta div{min-width:0}
+.hero__meta dt{font-size:var(--step--1);color:var(--on-dark-faint);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+.hero__meta dd{margin:0;font-family:var(--font-display);font-size:1.35rem;color:var(--on-dark)}
+
+/* retrato editorial — placeholder CSS */
+.portrait{
+  position:relative;aspect-ratio:1400/900;width:100%;
+  border:1px solid rgba(201,162,75,.28);border-radius:var(--radius-lg);
+  background:linear-gradient(135deg,#1A1614 0%,#7A1F27 140%);
+  display:grid;place-items:center;overflow:hidden;
+}
+.portrait--tall{aspect-ratio:500/600}
+.portrait::after{
+  content:"";position:absolute;inset:0;opacity:.5;
+  background:repeating-linear-gradient(115deg,rgba(244,237,228,.045) 0 1px,transparent 1px 9px);
+}
+.portrait__mark{
+  position:relative;z-index:1;text-align:center;
+  font-family:var(--font-display);color:rgba(244,237,228,.34);
+}
+.portrait__mark strong{display:block;font-size:clamp(2.5rem,7vw,4rem);font-weight:400;letter-spacing:.1em}
+.portrait__mark span{
+  display:block;font-family:var(--font-body);font-size:.6875rem;
+  letter-spacing:.2em;text-transform:uppercase;margin-top:.6rem;
+}
+.hero__portrait{position:relative}
+.hero__seal{
+  position:absolute;left:clamp(-1rem,-2vw,-1.75rem);bottom:clamp(1.25rem,4vw,2.25rem);
+  background:var(--wine);color:#fff;padding:1rem 1.15rem;border-radius:var(--radius);
+  display:flex;align-items:center;gap:.8rem;max-width:270px;
+  box-shadow:0 18px 44px rgba(0,0,0,.42);
+}
+.hero__seal strong{display:block;font-family:var(--font-display);font-size:1.02rem;line-height:1.2}
+.hero__seal span{display:block;font-size:.6875rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-top:.2rem}
+
+@media(max-width:900px){
+  .hero__grid{grid-template-columns:1fr}
+  .hero__portrait{order:-1;max-width:520px;margin-bottom:2.5rem}
+  /* o selo desce e "sai" da borda inferior para não cobrir o retrato */
+  .hero__seal{left:auto;right:0;bottom:-1.5rem;max-width:240px;padding:.85rem 1rem}
+  .hero__seal strong{font-size:.94rem}
+}
+
+/* ═══════════ 3. AUTORIDADE / CREDENCIAL ═══════════ */
+/* Vem ANTES do portfólio: primeiro se entende por que negociar
+   com ELA importa; só depois os lançamentos. */
+.authority{background:var(--cream);position:relative}
+.authority::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:min(var(--maxw),100% - 2*var(--gutter));height:1px;background:var(--line-gold);
+}
+.authority__grid{display:grid;grid-template-columns:auto 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.authority__statement{font-size:var(--step-2);font-family:var(--font-display);line-height:1.24;max-width:22ch}
+.authority__body{margin-top:1.5rem;max-width:56ch}
+.authority__body strong{font-weight:600;color:var(--ink)}
+.seal{width:clamp(104px,13vw,148px);height:auto;flex:none}
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);
+  margin-top:clamp(2.5rem,5vw,3.75rem);
+}
+.stat{background:var(--cream);padding:1.75rem 1.5rem}
+.stat__num{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.85rem);line-height:1;color:var(--wine)}
+.stat__label{font-size:var(--step--1);color:var(--ink-soft);margin-top:.6rem;line-height:1.45}
+@media(max-width:760px){
+  .authority__grid{grid-template-columns:1fr}
+}
+
+/* ═══════════ 4. LANÇAMENTOS ═══════════ */
+.launches{background:var(--cream-deep)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1.5rem;margin-bottom:clamp(2.5rem,5vw,3.5rem)}
+.sec-head h2{font-size:var(--step-3);max-width:16ch}
+.sec-head p{max-width:38ch;color:var(--ink-soft);font-size:var(--step--1)}
+
+.feature{
+  display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(1.75rem,4vw,3.25rem);
+  align-items:center;margin-bottom:clamp(2rem,4vw,3rem);
+}
+/* placeholder de card de lançamento */
+.shot{
+  position:relative;aspect-ratio:800/600;width:100%;
+  background:#EFE7DB;border:1px solid var(--line-gold);border-radius:var(--radius-lg);
+  display:grid;place-items:center;overflow:hidden;
+}
+.shot::after{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(58deg,rgba(26,22,20,.035) 0 1px,transparent 1px 14px);
+}
+.shot__mark{
+  position:relative;z-index:1;text-align:center;padding:1rem;
+  font-family:var(--font-body);font-size:.625rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-faint);
+}
+.shot__mark strong{
+  display:block;font-family:var(--font-display);font-size:1.6rem;letter-spacing:.04em;
+  text-transform:none;color:rgba(26,22,20,.45);margin-bottom:.5rem;font-weight:400;
+}
+.shot__tag{position:absolute;top:1rem;left:1rem;z-index:2}
+.feature__body h3{font-size:var(--step-2);margin:.9rem 0 .85rem}
+.feature__quote{
+  font-family:var(--font-display);font-style:italic;font-size:var(--step-1);
+  color:var(--wine);margin:1.4rem 0;padding-left:1.1rem;border-left:2px solid var(--gold);
+}
+.specs{list-style:none;padding:0;margin:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.specs li{
+  display:flex;justify-content:space-between;gap:1.5rem;align-items:baseline;
+  padding:.7rem 0;border-bottom:1px solid var(--line);font-size:var(--step--1);
+}
+.specs dt,.specs .k{color:var(--ink-faint);letter-spacing:.08em;text-transform:uppercase;font-size:.6875rem}
+.specs .v{font-weight:600;text-align:right}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(1.25rem,3vw,2rem)}
+.card{
+  background:var(--cream);border:1px solid var(--line-gold);border-radius:var(--radius-lg);
+  display:flex;flex-direction:column;overflow:hidden;
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease);
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 20px 46px rgba(26,22,20,.1)}
+.card .shot{border:0;border-bottom:1px solid var(--line-gold);border-radius:0}
+.card__body{padding:1.6rem;display:flex;flex-direction:column;flex:1;gap:.85rem}
+.card__body h3{font-size:var(--step-1)}
+.card__body p{font-size:var(--step--1);color:var(--ink-soft)}
+.card__link{
+  margin-top:auto;padding-top:.5rem;font-size:var(--step--1);font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--wine);
+  display:inline-flex;align-items:center;gap:.5rem;
+}
+.card__link span{transition:transform .35s var(--ease)}
+.card__link:hover span{transform:translateX(5px)}
+@media(max-width:860px){.feature{grid-template-columns:1fr}}
+
+/* ═══════════ 5. POR QUE UMA CORRETORA PARCEIRA ═══════════ */
+.why{background:var(--charcoal);color:var(--on-dark)}
+.why h2{font-size:var(--step-3);color:var(--on-dark);max-width:18ch}
+.why__lead{margin-top:1.4rem;max-width:52ch}
+.why__list{
+  list-style:none;padding:0;margin:clamp(2.75rem,6vw,4rem) 0 0;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:1px;background:rgba(244,237,228,.14);border:1px solid rgba(244,237,228,.14);
+}
+.why__list li{background:var(--charcoal);padding:2rem 1.75rem}
+.why__n{
+  font-family:var(--font-display);font-size:.9rem;color:var(--gold);
+  letter-spacing:.16em;display:block;margin-bottom:1.1rem;
+}
+.why__list h3{font-size:var(--step-1);color:var(--on-dark);margin-bottom:.7rem}
+.why__list p{font-size:var(--step--1);color:var(--on-dark-soft)}
+
+/* ═══════════ 6. CADASTRO ANTECIPADO ═══════════ */
+.signup{background:var(--cream)}
+.signup__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,5rem);align-items:start}
+.signup h2{font-size:var(--step-3);margin:1.2rem 0 1.2rem;max-width:14ch}
+.signup__points{list-style:none;padding:0;margin:2rem 0 0;display:grid;gap:.9rem}
+.signup__points li{display:flex;gap:.8rem;align-items:flex-start;font-size:var(--step--1);color:var(--ink-soft)}
+.signup__points svg{flex:none;margin-top:.3rem}
+.form{
+  background:var(--cream-deep);border:1px solid var(--line-gold);
+  border-radius:var(--radius-lg);padding:clamp(1.5rem,4vw,2.25rem);
+}
+.field{margin-bottom:1.1rem}
+.field label{
+  display:block;font-size:.6875rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-faint);margin-bottom:.45rem;
+}
+.field input,.field select{
+  width:100%;padding:.85rem .95rem;background:var(--cream);
+  border:1px solid var(--line);border-radius:var(--radius);
+  transition:border-color .3s var(--ease);
+}
+.field input:focus,.field select:focus{border-color:var(--gold);outline:none;box-shadow:0 0 0 3px rgba(201,162,75,.2)}
+.field input::placeholder{color:rgba(26,22,20,.34)}
+.form__note{font-size:.75rem;color:var(--ink-faint);margin-top:1rem;line-height:1.5;text-align:center}
+.form__status{font-size:var(--step--1);margin-top:.9rem;text-align:center;color:var(--wine);font-weight:600;min-height:1.2em}
+@media(max-width:820px){.signup__grid{grid-template-columns:1fr}}
+
+/* ═══════════ 7. DEPOIMENTOS ═══════════ */
+.voices{background:var(--cream-deep)}
+.voices__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(1.25rem,3vw,1.75rem)}
+.voice{
+  background:var(--cream);border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:2rem 1.75rem;display:flex;flex-direction:column;gap:1.2rem;
+}
+.voice__quote{font-family:var(--font-display);font-size:var(--step-1);line-height:1.45;font-style:italic}
+.voice__who{display:flex;align-items:center;gap:.85rem;margin-top:auto}
+.voice__av{
+  width:40px;height:40px;border-radius:50%;flex:none;
+  background:linear-gradient(135deg,#1A1614 0%,#7A1F27 140%);
+  display:grid;place-items:center;color:rgba(244,237,228,.7);
+  font-family:var(--font-display);font-size:.8rem;
+}
+.voice__who b{display:block;font-size:var(--step--1);font-weight:600}
+.voice__who small{display:block;font-size:.75rem;color:var(--ink-faint)}
+
+/* ═══════════ 8. SOBRE ═══════════ */
+.about{background:var(--cream)}
+.about__grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2.5rem,6vw,4.5rem);align-items:center}
+.about h2{font-size:var(--step-3);margin:1.2rem 0 1.5rem}
+.about p + p{margin-top:1.1rem}
+.about__creci{
+  margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;align-items:center;
+}
+.about__creci dt{font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.25rem}
+.about__creci dd{margin:0;font-family:var(--font-display);font-size:1.15rem}
+.about__creci a:hover{color:var(--wine)}
+@media(max-width:820px){.about__grid{grid-template-columns:1fr}.about__portrait{max-width:380px}}
+
+/* ═══════════ 9. CTA FINAL ═══════════ */
+.final{
+  background:var(--charcoal);color:var(--on-dark);text-align:center;
+  position:relative;overflow:hidden;
+}
+.final::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(80% 120% at 50% 110%,rgba(122,31,39,.6) 0%,transparent 65%);
+}
+.final .wrap{position:relative}
+.final h2{font-size:var(--step-3);color:var(--on-dark);margin:1.4rem auto 1.3rem;max-width:18ch}
+.final p{max-width:46ch;margin-inline:auto}
+.final .eyebrow{justify-content:center}
+.final__actions{display:flex;flex-wrap:wrap;gap:.85rem;justify-content:center;margin-top:2.4rem}
+
+/* ═══════════ 10. FOOTER ═══════════ */
+.footer{background:var(--charcoal);color:var(--on-dark-soft);padding-block:3rem;border-top:1px solid rgba(244,237,228,.12)}
+.footer__grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:flex-start}
+.footer__brand{font-family:var(--font-display);font-size:1.3rem;color:var(--on-dark)}
+.footer__meta{font-size:var(--step--1);margin-top:.5rem;line-height:1.8}
+.footer__links{display:flex;flex-wrap:wrap;gap:1.5rem;font-size:var(--step--1)}
+.footer__links a{display:inline-flex;align-items:center;gap:.5rem;transition:color .3s var(--ease)}
+.footer__links a:hover{color:var(--gold)}
+.footer__base{
+  margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(244,237,228,.1);
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;
+  font-size:.75rem;color:var(--on-dark-faint);
+}
+
+/* ═══════════ WHATSAPP FLUTUANTE ═══════════ */
+.wa{
+  position:fixed;right:clamp(1rem,3vw,1.75rem);bottom:clamp(1rem,3vw,1.75rem);z-index:90;
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:var(--gold);color:var(--charcoal);          /* texto escuro sobre dourado */
+  padding:.85rem 1.15rem;border-radius:999px;font-weight:600;
+  font-size:var(--step--1);letter-spacing:.04em;
+  box-shadow:0 12px 30px rgba(26,22,20,.28);
+  transition:transform .35s var(--ease),background-color .35s var(--ease);
+}
+.wa:hover{background:var(--gold-warm);transform:translateY(-2px)}
+.wa__label{white-space:nowrap}
+.wa::before{
+  content:"";position:absolute;inset:0;border-radius:999px;
+  border:1px solid var(--gold);animation:pulse 2.8s var(--ease) infinite;
+}
+@keyframes pulse{
+  0%{transform:scale(1);opacity:.7}
+  70%{transform:scale(1.22);opacity:0}
+  100%{transform:scale(1.22);opacity:0}
+}
+@media(max-width:600px){
+  .wa__label{display:none}
+  .wa{padding:.9rem;border-radius:50%}
+}
+
+/* ═══════════ SCROLL REVEAL ═══════════ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.is-in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.1s}
+.reveal[data-d="2"]{transition-delay:.2s}
+.reveal[data-d="3"]{transition-delay:.3s}
+
+/* ═══════════ PREFERÊNCIAS DO USUÁRIO ═══════════ */
+@media (prefers-reduced-motion: reduce){
+  html:focus-within{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;scroll-behavior:auto !important;
+  }
+  .reveal{opacity:1;transform:none}
+  .wa::before{display:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .nav.is-stuck{background:var(--charcoal);backdrop-filter:none}
+  .hero::before,.final::before{display:none}
+  .portrait::after,.shot::after{display:none}
+}
+@media (prefers-contrast: more){
+  :root{
+    --line:rgba(26,22,20,.4);
+    --line-gold:rgba(201,162,75,.6);
+    --ink-soft:#332C28;
+    --ink-faint:#4A413C;
+    --on-dark-soft:#F4EDE4;
+    --on-dark-faint:#D9CFC2;
+  }
+  .btn--ghost{border-color:var(--on-dark)}
+  .btn--ghost-dark{border-color:var(--charcoal)}
+  .card,.voice,.form{border-width:2px}
+}
+@media print{
+  .nav,.wa,.hero__actions,.final__actions{display:none}
+  body{background:#fff;color:#000}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ═══════════════════════════════════════════════════════
+     1. NAV — nome + badge de credencial + CTA
+     ═══════════════════════════════════════════════════════ -->
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="brand" href="#topo" aria-label="Juliana Neri — início">
+      <span class="brand__name">Juliana Neri</span>
+      <span class="badge brand__badge">Corretora Original Opus</span>
+    </a>
+
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav__links" id="navLinks" aria-label="Navegação principal">
+      <a class="nav__link" href="#autoridade">Credencial</a>
+      <a class="nav__link" href="#lancamentos">Lançamentos</a>
+      <a class="nav__link" href="#parceria">Por que comigo</a>
+      <a class="nav__link" href="#cadastro">Cadastro antecipado</a>
+      <a class="nav__link" href="#sobre">Sobre</a>
+      <a class="btn btn--gold nav__cta" href="https://wa.me/5562999587833?text=Ol%C3%A1%2C%20Juliana!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20lan%C3%A7amentos" target="_blank" rel="noopener">Falar com Juliana</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- ═══════════════════════════════════════════════════════
+     2. HERO — sem barra de busca. Headline editorial,
+     credencial visível e CTA duplo.
+     ═══════════════════════════════════════════════════════ -->
+<section class="hero" id="topo">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow eyebrow--dark hero__eyebrow">Goiânia · GO — Alto padrão</p>
+
+      <h1>Exclusividade não se explica.<em>Se reconhece.</em></h1>
+
+      <p class="lead lead--dark hero__sub">
+        Consultora imobiliária há 15 anos em Goiânia, parceira oficial das principais
+        incorporadoras de alto padrão da cidade.
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--gold" href="#lancamentos">Quero conhecer os lançamentos</a>
+        <a class="btn btn--ghost" href="https://wa.me/5562999587833?text=Ol%C3%A1%2C%20Juliana!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20lan%C3%A7amentos" target="_blank" rel="noopener">Falar com Juliana</a>
+      </div>
+
+      <dl class="hero__meta">
+        <div><dt>Experiência</dt><dd>15 anos</dd></div>
+        <div><dt>Reconhecimento</dt><dd>Premiada 3× em 2024</dd></div>
+        <div><dt>Atuação</dt><dd>Marista · Lago das Rosas</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero__portrait">
+      <!-- SUBSTITUIR: foto editorial da Juliana ou vista de um lançamento — 1400x900px.
+           Trocar a div .portrait por: <img src="hero-juliana.jpg" alt="Juliana Neri, consultora imobiliária, em Goiânia" width="1400" height="900"> -->
+      <div class="portrait" role="img" aria-label="Espaço reservado para o retrato editorial de Juliana Neri">
+        <span class="portrait__mark">
+          <strong>JN</strong>
+          <span>Retrato editorial · 1400×900</span>
+        </span>
+      </div>
+
+      <!-- badge de credencial (vermelho, nunca botão) -->
+      <div class="hero__seal">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="9" r="6" stroke="#C9A24B" stroke-width="1.4"/>
+          <circle cx="12" cy="9" r="3.2" stroke="rgba(255,255,255,.55)" stroke-width="1"/>
+          <path d="M8.4 14 6.5 22l5.5-2.8L17.5 22l-1.9-8" stroke="#C9A24B" stroke-width="1.4" stroke-linejoin="round"/>
+        </svg>
+        <span>
+          <strong>Corretora Original Opus</strong>
+          <span>Premiada 3× em 2024</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     3. AUTORIDADE / CREDENCIAL — logo após o hero,
+     antes do portfólio. Esta é a peça central da página.
+     ═══════════════════════════════════════════════════════ -->
+<section class="section authority" id="autoridade">
+  <div class="wrap">
+    <p class="eyebrow reveal" style="margin-bottom:clamp(2rem,4vw,3rem)">A credencial</p>
+
+    <div class="authority__grid">
+      <!-- Selo/medalha em SVG — sem foto.
+           SUBSTITUIR (opcional): foto real da medalha/prêmio Opus, se disponível — 400x400px -->
+      <div class="reveal">
+        <svg class="seal" viewBox="0 0 120 120" role="img" aria-label="Selo de premiação Corretora Original Opus">
+          <circle cx="60" cy="60" r="56" fill="none" stroke="#C9A24B" stroke-width="1"/>
+          <circle cx="60" cy="60" r="47" fill="none" stroke="#C9A24B" stroke-width="2.5"/>
+          <circle cx="60" cy="60" r="40" fill="none" stroke="rgba(122,31,39,.35)" stroke-width="1"/>
+          <path d="M60 34l5.6 11.4 12.6 1.8-9.1 8.9 2.2 12.5L60 62.7l-11.3 5.9 2.2-12.5-9.1-8.9 12.6-1.8z" fill="#C9A24B"/>
+          <text x="60" y="82" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="9" fill="#7A1F27" letter-spacing="1.4">OPUS</text>
+          <text x="60" y="94" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="8" fill="rgba(26,22,20,.55)" letter-spacing="1.2">2024</text>
+        </svg>
+      </div>
+
+      <div>
+        <h2 class="authority__statement reveal" data-d="1">
+          Uma de apenas <span class="serif-em" style="color:var(--wine)">13 corretores no Brasil</span> premiados pela Opus em 2024.
+        </h2>
+        <p class="lead authority__body reveal" data-d="2">
+          O reconhecimento veio por vender ao menos um empreendimento a cada trimestre —
+          <strong>uma parceria construída ao longo de anos</strong> com a maior referência
+          em alto padrão de Goiânia. Não é um selo comprado: é o resultado de constância,
+          relacionamento e entrega, trimestre após trimestre.
+        </p>
+        <p style="margin-top:1.4rem" class="reveal" data-d="3">
+          <span class="badge badge--outline">Opus</span>
+          <span class="badge badge--outline" style="margin-left:.5rem">Flamboyant Urbanismo</span>
+          <!-- SUBSTITUIR: acrescentar as demais incorporadoras parceiras confirmadas pela Juliana -->
+        </p>
+      </div>
+    </div>
+
+    <dl class="stats reveal">
+      <div class="stat">
+        <div class="stat__num">15</div>
+        <div class="stat__label">anos de mercado imobiliário em Goiânia</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">1 de 13</div>
+        <div class="stat__label">corretores no Brasil premiados pela Opus em 2024</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">3×</div>
+        <div class="stat__label">premiada ao longo de 2024 pela meta trimestral</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">Oficial</div>
+        <div class="stat__label">parceira credenciada das incorporadoras de alto padrão</div>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     4. LANÇAMENTOS EM DESTAQUE — 3 empreendimentos reais.
+     Sem barra de busca: seleção curada, não catálogo.
+     ═══════════════════════════════════════════════════════ -->
+<section class="section launches" id="lancamentos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Lançamentos em destaque</h2>
+      <p>Uma seleção curada dos empreendimentos que acompanho pessoalmente — do cadastro à entrega das chaves.</p>
+    </div>
+
+    <!-- ── DESTAQUE PRINCIPAL: Lago das Rosas ── -->
+    <article class="feature reveal">
+      <div>
+        <!-- SUBSTITUIR: render ou foto real do apartamento / vista para o Lago das Rosas — 800x600px -->
+        <div class="shot" role="img" aria-label="Espaço reservado para a foto do apartamento no Lago das Rosas">
+          <span class="tag shot__tag">Pronto para morar</span>
+          <span class="shot__mark"><strong>Lago das Rosas</strong>Render / foto real · 800×600</span>
+        </div>
+      </div>
+
+      <div class="feature__body">
+        <span class="tag tag--quiet">Goiânia · Lago das Rosas</span>
+        <h3>Apartamento com vista definitiva para o Lago das Rosas</h3>
+        <p class="lead">Andar alto, um único apartamento por andar. Privacidade absoluta e uma vista que o entorno não vai mais alterar.</p>
+
+        <p class="feature__quote">“Uma vista que jamais será construída novamente.”</p>
+
+        <ul class="specs">
+          <li><span class="k">Área privativa</span><span class="v">214 m²</span></li>
+          <li><span class="k">Suítes</span><span class="v">4 suítes</span></li>
+          <li><span class="k">Vagas</span><span class="v">3 vagas de garagem</span></li>
+          <li><span class="k">Posição</span><span class="v">Andar alto · 1 apto por andar</span></li>
+          <li><span class="k">Vista</span><span class="v">Definitiva para o Lago das Rosas</span></li>
+        </ul>
+
+        <p style="margin-top:1.6rem">
+          <a class="btn btn--gold" href="https://wa.me/5562999587833?text=Ol%C3%A1%2C%20Juliana!%20Quero%20saber%20mais%20sobre%20o%20apartamento%20de%20214%20m%C2%B2%20no%20Lago%20das%20Rosas." target="_blank" rel="noopener">Quero detalhes deste imóvel</a>
+        </p>
+      </div>
+    </article>
+
+    <!-- ── Os outros dois lançamentos ── -->
+    <div class="cards">
+      <article class="card reveal" data-d="1">
+        <!-- SUBSTITUIR: render oficial do lançamento Flamboyant Urbanismo — 800x600px -->
+        <div class="shot" role="img" aria-label="Espaço reservado para o render do lançamento Flamboyant Urbanismo">
+          <span class="tag shot__tag">Pré-lançamento</span>
+          <span class="shot__mark"><strong>Flamboyant Urbanismo</strong>Render oficial · 800×600</span>
+        </div>
+        <div class="card__body">
+          <span class="tag tag--quiet">Goiânia</span>
+          <h3>Lançamento Flamboyant Urbanismo</h3>
+          <p>Plantas de 54 m² (1 suíte) a 92 m² (3 suítes). Em fase de pré-lançamento, com cadastro antecipado disponível para quem quer garantir a melhor unidade e a tabela de lançamento.</p>
+          <ul class="specs" style="margin-top:.3rem">
+            <li><span class="k">Plantas</span><span class="v">54 m² a 92 m²</span></li>
+            <li><span class="k">Configuração</span><span class="v">1 a 3 suítes</span></li>
+            <li><span class="k">Fase</span><span class="v">Pré-lançamento</span></li>
+          </ul>
+          <a class="card__link" href="#cadastro">Fazer cadastro antecipado <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="card reveal" data-d="2">
+        <!-- SUBSTITUIR: foto/render dos edifícios da Rua 148, Setor Marista — 800x600px -->
+        <div class="shot" role="img" aria-label="Espaço reservado para a foto dos edifícios da Rua 148, Setor Marista">
+          <span class="tag shot__tag">Alto padrão</span>
+          <span class="shot__mark"><strong>Rua 148 · Marista</strong>Render oficial · 800×600</span>
+        </div>
+        <div class="card__body">
+          <span class="tag tag--quiet">Goiânia · Setor Marista</span>
+          <h3>Rua 148 — Setor Marista</h3>
+          <p>Múltiplos edifícios de assinatura em uma das regiões de mais alto padrão de Goiânia. Cada projeto com arquitetura, implantação e posicionamento próprios.</p>
+          <p class="feature__quote" style="font-size:var(--step-0);margin:.4rem 0">“Cada prédio, uma identidade. Uma vista que não se repete.”</p>
+          <a class="card__link" href="https://wa.me/5562999587833?text=Ol%C3%A1%2C%20Juliana!%20Quero%20conhecer%20os%20edif%C3%ADcios%20da%20Rua%20148%2C%20no%20Setor%20Marista." target="_blank" rel="noopener">Conhecer os edifícios <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     5. POR QUE NEGOCIAR COM UMA CORRETORA PARCEIRA
+     O diferencial estrutural do modelo dela.
+     ═══════════════════════════════════════════════════════ -->
+<section class="section why" id="parceria">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--dark reveal" style="margin-bottom:1.6rem">O diferencial</p>
+    <h2 class="reveal" data-d="1">Por que negociar com uma corretora parceira</h2>
+    <p class="lead lead--dark why__lead reveal" data-d="2">
+      Como corretora oficial, você tem acesso às condições de lançamento antes do mercado geral —
+      e acompanhamento direto, do cadastro à entrega das chaves.
+    </p>
+
+    <ul class="why__list">
+      <li class="reveal">
+        <span class="why__n">01</span>
+        <h3>Acesso antecipado</h3>
+        <p>Você conhece o empreendimento na fase de pré-lançamento, quando as melhores unidades, andares e posições de vista ainda estão inteiras.</p>
+      </li>
+      <li class="reveal" data-d="1">
+        <span class="why__n">02</span>
+        <h3>Condições de tabela de lançamento</h3>
+        <p>Preço e plano de pagamento praticados pela própria incorporadora na abertura de vendas — sem intermediação extra entre você e o empreendimento.</p>
+      </li>
+      <li class="reveal" data-d="2">
+        <span class="why__n">03</span>
+        <h3>Acompanhamento até a chave</h3>
+        <p>Cadastro, escolha de unidade, contrato, documentação e obra. Uma interlocutora só, do primeiro contato à entrega.</p>
+      </li>
+      <li class="reveal" data-d="3">
+        <span class="why__n">04</span>
+        <h3>Leitura de mercado local</h3>
+        <p>Quinze anos acompanhando Marista, Lago das Rosas e região — o que valoriza, o que vira vista permanente e o que não se repete.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     6. CADASTRO ANTECIPADO — mecânica própria dela.
+     ═══════════════════════════════════════════════════════ -->
+<section class="section signup" id="cadastro">
+  <div class="wrap signup__grid">
+    <div>
+      <p class="eyebrow reveal">Cadastro antecipado</p>
+      <h2 class="reveal" data-d="1">Quem se cadastra agora, sai na frente.</h2>
+      <p class="lead reveal" data-d="2">
+        Os melhores apartamentos de um lançamento não chegam ao anúncio. Eles são escolhidos
+        na fase de cadastro — por quem já estava na lista. Deixe seus dados e eu aviso você
+        assim que a tabela abrir.
+      </p>
+
+      <ul class="signup__points reveal" data-d="3">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" stroke="#7A1F27" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Prioridade na escolha de unidade, andar e posição de vista
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" stroke="#7A1F27" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Condições de tabela de lançamento, antes da abertura geral
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5" stroke="#7A1F27" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Aviso pessoal meu, direto no seu WhatsApp — sem lista de disparo
+        </li>
+      </ul>
+    </div>
+
+    <!-- FORMULÁRIO
+         PREVIEW: o envio monta uma mensagem e abre o WhatsApp da Juliana.
+         SITE FINAL: trocar por integração real — endpoint próprio, Formspree,
+         Google Sheets/Apps Script ou o CRM que ela usar. Ver handleSignup() no JS. -->
+    <form class="form reveal" data-d="2" id="signupForm" novalidate>
+      <div class="field">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" name="nome" placeholder="Como você se chama" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="telefone">WhatsApp</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(62) 9 0000-0000" autocomplete="tel" inputmode="tel" required>
+      </div>
+      <div class="field">
+        <label for="interesse">Lançamento de interesse</label>
+        <select id="interesse" name="interesse" required>
+          <option value="Lago das Rosas — 214 m², 4 suítes">Lago das Rosas — 214 m², 4 suítes</option>
+          <option value="Flamboyant Urbanismo — 54 m² a 92 m²">Flamboyant Urbanismo — 54 m² a 92 m²</option>
+          <option value="Rua 148 — Setor Marista">Rua 148 — Setor Marista</option>
+          <option value="Ainda não sei — quero orientação">Ainda não sei — quero orientação</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn--gold btn--block">Cadastre-se e saia na frente</button>
+      <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+      <p class="form__note">Seus dados vão direto para mim. Sem disparo em massa, sem repasse a terceiros.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     7. DEPOIMENTOS
+     SUBSTITUIR: os três textos abaixo são de exemplo e devem
+     ser trocados por depoimentos reais de clientes da Juliana,
+     com autorização de uso do nome.
+     ═══════════════════════════════════════════════════════ -->
+<section class="section voices" id="depoimentos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>O que dizem de mim</h2>
+      <p>Quem comprou comigo costuma voltar — e trazer alguém junto.</p>
+    </div>
+
+    <div class="voices__grid">
+      <!-- SUBSTITUIR: depoimento real 1 — nome, bairro e autorização de uso -->
+      <figure class="voice reveal" style="margin:0">
+        <blockquote class="voice__quote" style="margin:0">“Ela não me vendeu um apartamento. Ela entendeu o que a nossa família precisava e esperou até aparecer o certo.”</blockquote>
+        <figcaption class="voice__who">
+          <span class="voice__av" aria-hidden="true">CM</span>
+          <span><b>Cliente · Setor Marista</b><small>Depoimento a substituir</small></span>
+        </figcaption>
+      </figure>
+
+      <!-- SUBSTITUIR: depoimento real 2 -->
+      <figure class="voice reveal" data-d="1" style="margin:0">
+        <blockquote class="voice__quote" style="margin:0">“Do cadastro à entrega da chave foi ela do começo ao fim. Em nenhum momento eu tive que correr atrás de ninguém.”</blockquote>
+        <figcaption class="voice__who">
+          <span class="voice__av" aria-hidden="true">RA</span>
+          <span><b>Cliente · Lago das Rosas</b><small>Depoimento a substituir</small></span>
+        </figcaption>
+      </figure>
+
+      <!-- SUBSTITUIR: depoimento real 3 -->
+      <figure class="voice reveal" data-d="2" style="margin:0">
+        <blockquote class="voice__quote" style="margin:0">“Entrei na lista de cadastro antecipado quase sem acreditar. Peguei o andar que eu queria, com a vista que eu queria.”</blockquote>
+        <figcaption class="voice__who">
+          <span class="voice__av" aria-hidden="true">LF</span>
+          <span><b>Cliente · Goiânia</b><small>Depoimento a substituir</small></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     8. SOBRE — autoridade pessoal, CRECI e contato direto
+     ═══════════════════════════════════════════════════════ -->
+<section class="section about" id="sobre">
+  <div class="wrap about__grid">
+    <div class="about__portrait reveal">
+      <!-- SUBSTITUIR: foto profissional da Juliana — 500x600px.
+           Trocar a div .portrait por: <img src="juliana-retrato.jpg" alt="Juliana Neri" width="500" height="600"> -->
+      <div class="portrait portrait--tall" role="img" aria-label="Espaço reservado para a foto profissional de Juliana Neri">
+        <span class="portrait__mark">
+          <strong>JN</strong>
+          <span>Retrato · 500×600</span>
+        </span>
+      </div>
+    </div>
+
+    <div>
+      <p class="eyebrow reveal">Sobre mim</p>
+      <h2 class="reveal" data-d="1">Sou eu quem atende. Do primeiro contato à entrega da chave.</h2>
+
+      <div class="reveal" data-d="2">
+        <p class="lead">
+          Meu nome é Juliana Neri e há quinze anos eu trabalho com o mesmo mercado, na mesma cidade,
+          com as mesmas pessoas. Foi assim que virei parceira oficial das principais incorporadoras
+          de alto padrão de Goiânia.
+        </p>
+        <p>
+          Eu não tenho uma carteira de imóveis usados para empurrar. O que eu tenho é acesso — e o
+          acesso, no alto padrão, é tudo. Ele decide quem escolhe o andar, a vista e a condição, e
+          quem fica com o que sobrou.
+        </p>
+        <p>
+          Se você chegou até aqui, provavelmente não está procurando um apartamento qualquer.
+          Está procurando o endereço certo. Vamos conversar.
+        </p>
+      </div>
+
+      <dl class="about__creci reveal" data-d="3">
+        <div>
+          <dt>Registro</dt>
+          <!-- ⚠ CONFIRMAR ANTES DE PUBLICAR: o número aparece como 20172 em um post
+               do Instagram e 20173 em outro. Confirmar o CRECI correto com a Juliana
+               e ajustar aqui, no rodapé e nos metadados. -->
+          <dd>CRECI 20173 · GO</dd>
+        </div>
+        <div>
+          <dt>Atuação</dt>
+          <dd>Goiânia · GO</dd>
+        </div>
+        <div>
+          <dt>Contato direto</dt>
+          <dd><a href="https://wa.me/5562999587833?text=Ol%C3%A1%2C%20Juliana!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20lan%C3%A7amentos" target="_blank" rel="noopener">(62) 99958-7833</a></dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     9. CTA FINAL
+     ═══════════════════════════════════════════════════════ -->
+<section class="section final">
+  <div class="wrap narrow">
+    <p class="eyebrow eyebrow--dark reveal">Próximo passo</p>
+    <h2 class="reveal" data-d="1">Vamos conversar sobre o seu próximo endereço?</h2>
+    <p class="lead lead--dark reveal" data-d="2">
+      Me conte o que você procura — bairro, metragem, momento de compra.
+      Eu te digo, com franqueza, o que faz sentido hoje em Goiânia.
+    </p>
+    <div class="final__actions reveal" data-d="3">
+      <a class="btn btn--gold" href="https://wa.me/5562999587833?text=Ol%C3%A1%2C%20Juliana!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20lan%C3%A7amentos" target="_blank" rel="noopener">Falar com Juliana no WhatsApp</a>
+      <a class="btn btn--ghost" href="#cadastro">Fazer cadastro antecipado</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════
+     10. FOOTER
+     ═══════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">Juliana Neri</div>
+        <div class="footer__meta">
+          Consultora imobiliária · Alto padrão<br>
+          <!-- ⚠ CONFIRMAR ANTES DE PUBLICAR: 20172 ou 20173 — ver comentário na seção Sobre -->
+          CRECI 20173 · GO — Goiânia, Goiás
+        </div>
+      </div>
+
+      <nav class="footer__links" aria-label="Contato e redes">
+        <a href="https://wa.me/5562999587833?text=Ol%C3%A1%2C%20Juliana!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20lan%C3%A7amentos" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5.1-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.2-.5s0-.4-.1-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.2s.9 2.6 1.1 2.7c.1.2 1.9 3 4.6 4.1 1.9.8 2.3.7 2.7.6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.5-.3z"/></svg>
+          (62) 99958-7833
+        </a>
+        <a href="https://instagram.com/juliananerimoveis" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+          @juliananerimoveis
+        </a>
+        <a href="#cadastro">Cadastro antecipado</a>
+      </nav>
+    </div>
+
+    <div class="footer__base">
+      <span>© <span id="ano">2026</span> Juliana Neri. Todos os direitos reservados.</span>
+      <span>Goiânia · Goiás — Marista, Lago das Rosas e região</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp fixo — dourado com texto charcoal, pulse suave -->
+<a class="wa" href="https://wa.me/5562999587833?text=Ol%C3%A1%2C%20Juliana!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20lan%C3%A7amentos" target="_blank" rel="noopener" aria-label="Falar com Juliana no WhatsApp">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5.1-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.2-.5s0-.4-.1-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.2s.9 2.6 1.1 2.7c.1.2 1.9 3 4.6 4.1 1.9.8 2.3.7 2.7.6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.5-.3z"/></svg>
+  <span class="wa__label">Falar com Juliana</span>
+</a>
+
+<script>
+(function(){
+  "use strict";
+
+  var WHATSAPP = "5562999587833";
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ── NAV: estado fixo ao rolar ─────────────────────── */
+  var nav = document.getElementById("nav");
+  var onScroll = function(){
+    nav.classList.toggle("is-stuck", window.scrollY > 24);
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, {passive:true});
+
+  /* ── NAV: menu mobile ──────────────────────────────── */
+  var toggle = document.getElementById("navToggle");
+  var links  = document.getElementById("navLinks");
+  toggle.addEventListener("click", function(){
+    var open = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!open));
+    toggle.setAttribute("aria-label", open ? "Abrir menu" : "Fechar menu");
+    links.classList.toggle("is-open", !open);
+  });
+  links.addEventListener("click", function(e){
+    if (e.target.closest("a")) {
+      links.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded","false");
+      toggle.setAttribute("aria-label","Abrir menu");
+    }
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && links.classList.contains("is-open")) {
+      links.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded","false");
+      toggle.focus();
+    }
+  });
+
+  /* ── SCROLL REVEAL ─────────────────────────────────── */
+  var revealables = document.querySelectorAll(".reveal");
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    revealables.forEach(function(el){ el.classList.add("is-in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:"0px 0px -8% 0px"});
+    revealables.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ── FORMULÁRIO DE CADASTRO ANTECIPADO ──────────────
+     PREVIEW: valida no cliente e abre o WhatsApp da Juliana
+     com a mensagem já montada.
+     SITE FINAL: substituir o bloco marcado abaixo por um
+     fetch() para o endpoint real (Formspree, Apps Script,
+     API própria ou CRM), mantendo a validação e o feedback.
+     ──────────────────────────────────────────────────── */
+  var form = document.getElementById("signupForm");
+  var status = document.getElementById("formStatus");
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    var nome = form.nome.value.trim();
+    var tel  = form.telefone.value.trim();
+    var alvo = form.interesse.value;
+
+    if (nome.length < 3) {
+      status.textContent = "Por favor, informe seu nome completo.";
+      form.nome.focus();
+      return;
+    }
+    if (tel.replace(/\D/g,"").length < 10) {
+      status.textContent = "Informe um WhatsApp válido com DDD.";
+      form.telefone.focus();
+      return;
+    }
+
+    /* ▼▼ TROCAR NO SITE FINAL: envio real em vez de wa.me ▼▼
+       fetch("/api/cadastro", {
+         method:"POST",
+         headers:{"Content-Type":"application/json"},
+         body: JSON.stringify({nome:nome, telefone:tel, interesse:alvo})
+       })
+    */
+    var msg = "Olá, Juliana! Quero fazer o cadastro antecipado."
+            + "\n\nNome: " + nome
+            + "\nWhatsApp: " + tel
+            + "\nLançamento de interesse: " + alvo;
+
+    status.textContent = "Abrindo o WhatsApp com seus dados…";
+    window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
+    /* ▲▲ FIM DO BLOCO A SUBSTITUIR ▲▲ */
+  });
+
+  /* ── ano no rodapé ─────────────────────────────────── */
+  document.getElementById("ano").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
