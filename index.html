@@ -154,9 +154,9 @@ p{margin:0}
   padding-block:1.1rem;
   transition:background-color .4s var(--ease),padding .4s var(--ease),box-shadow .4s var(--ease);
 }
-.nav__inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:nowrap}
 .nav.is-stuck{background:rgba(26,22,20,.92);backdrop-filter:blur(14px);padding-block:.7rem;box-shadow:0 1px 0 rgba(201,162,75,.16)}
-.brand{display:flex;align-items:center;gap:.85rem;min-width:0;flex:0 1 auto}
+.brand{display:flex;align-items:center;gap:.85rem;flex:none}
 .brand__name{font-family:var(--font-display);font-size:1.28rem;color:var(--on-dark);letter-spacing:-.01em;white-space:nowrap;flex:none}
 .brand__badge{font-size:.5625rem;padding:.3rem .55rem;letter-spacing:.1em;flex:none}
 .nav__links{display:flex;align-items:center;gap:2rem;flex:none}
@@ -175,7 +175,7 @@ p{margin:0}
 .nav__toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 
 /* o badge do topo só cabe junto dos 6 links acima de 1340px */
-@media(max-width:1340px){
+@media(max-width:1360px){
   .brand__badge{display:none}
 }
 @media(max-width:1440px){
